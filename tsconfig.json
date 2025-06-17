@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "module": "ESNext",
+    "strict": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "~assets/*": ["src/assets/*"]
+    },
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "types": ["vite/client"],
+    "typeRoots": ["./src/types", "./node_modules/@types"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue",
+    "vite-env.d.ts" // 包含声明文件
+  ]
+  }
+  

@@ -1,0 +1,32 @@
+// 主题色系
+$primary-color: #1890ff !default;         // 品牌主色[1,8](@ref)
+$success-color: #52c41a !default;         // 成功状态
+$warning-color: #faad14 !default;         // 警示状态
+$error-color: #ff4d4f !default;           // 错误状态
+
+// 中性色
+$text-color: rgba(0, 0, 0, 0.85) !default;// 正文颜色[7](@ref)
+$border-color: #d9d9d9 !default;          // 边框色
+$background-color: #f5f5f5 !default;      // 背景色
+
+// 间距系统
+$space-unit: 8px !default;                // 基准单位[12](@ref)
+$space-xs: $space-unit * 0.5;             // 4px
+$space-sm: $space-unit;                    // 8px  
+$space-md: $space-unit * 2;                // 16px
+$space-lg: $space-unit * 3;                // 24px
+
+// 响应式断点
+$breakpoints: (
+  xs: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+// 导出共享变量（供JS使用）[4](@ref)
+:export {
+  primaryColor: $primary-color;
+  textColor: $text-color;
+}

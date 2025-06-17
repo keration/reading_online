@@ -1,0 +1,53 @@
+// Flex布局系统[12](@ref)
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  // 间距工具（margin/padding）
+  @each $dir in (t, r, b, l, x, y, all) {
+    @each $size, $value in (sm: $space-sm, md: $space-md, lg: $space-lg) {
+      .m-#{$dir}-#{$size} {
+        @if $dir == 't' { margin-top: $value; }
+        @if $dir == 'r' { margin-right: $value; }
+        @if $dir == 'b' { margin-bottom: $value; }
+        @if $dir == 'l' { margin-left: $value; }
+        @if $dir == 'x' { margin-left: $value; margin-right: $value; }
+        @if $dir == 'y' { margin-top: $value; margin-bottom: $value; }
+        @if $dir == 'all' { margin: $value; }
+      }
+      .p-#{$dir}-#{$size} { /* 类似逻辑生成padding */ }
+    }
+  }
+  
+  // 文本处理
+  .text-ellipsis {  // 单行截断[8](@ref)
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .multi-ellipsis { // 多行截断
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  // 响应式工具（移动端优先）
+  @each $bp, $width in $breakpoints {
+    @media (min-width: $width) {
+      .hidden-#{$bp} { display: none !important; }
+    }
+  }
+  
+  // 颜色工具类
+  @each $type in (primary, success, warning, error) {
+    .text-#{$type} { color: var(--#{$type}-color); }
+    .bg-#{$type} { background-color: var(--#{$type}-color); }
+  }

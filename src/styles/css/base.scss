@@ -1,0 +1,50 @@
+// 重置浏览器默认样式[8](@ref)
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// 基础元素重置
+body, h1, h2, h3, p, ul, ol {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+// 图片自适应处理
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+// 链接样式
+a {
+  color: $primary-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// 表单元素统一
+button, input, textarea {
+  font: inherit;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  padding: $space-sm;
+}
+
+// 表格样式重置
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+// Element Plus组件覆盖
+.el-button {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1); // 保持Element动效[6](@ref)
+}
