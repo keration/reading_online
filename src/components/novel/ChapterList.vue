@@ -64,20 +64,16 @@ const props = defineProps<{
 }>()
 const searchKey = ref('')
 
-
-// 防抖搜索处理（网页6、7、8）
 const debouncedSearch = debounce((val: string) => {
     searchKey.value = val.trim()
 }, 300)
 
-// 计算属性过滤（网页5）
 const filteredChapters = computed<Chapter[]>(() => {
     return props.chapters.filter(chapter =>
         chapter.title.toLowerCase().includes(searchKey.value.toLowerCase())
     )
 })
 
-// 时间格式化优化
 const formatTime = (date: Date) => {
     return dayjs(date).format('YYYY-MM-DD HH:mm')
 }
@@ -86,7 +82,6 @@ const formatTime = (date: Date) => {
 <style lang="scss">
 .chapter-list {
 
-    // 滚动条美化（网页9）
     ::-webkit-scrollbar {
         width: 8px;
 
